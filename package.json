@@ -1,7 +1,7 @@
 {
-  "name": "react-library-skeleton",
+  "name": "react-interval-rerender",
   "version": "0.0.0-development",
-  "description": "my personal skeleton for React library NPM packages",
+  "description": "render props component that rerenders its children at regular intervals",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src test stories --cache",
@@ -42,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jedwards1211/react-library-skeleton.git"
+    "url": "https://github.com/jcoreio/react-interval-rerender.git"
   },
   "keywords": [
     "es2015",
@@ -52,9 +52,9 @@
   "author": "Andy Edwards",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jedwards1211/react-library-skeleton/issues"
+    "url": "https://github.com/jcoreio/react-interval-rerender/issues"
   },
-  "homepage": "https://github.com/jedwards1211/react-library-skeleton#readme",
+  "homepage": "https://github.com/jcoreio/react-interval-rerender#readme",
   "devDependencies": {
     "@commitlint/cli": "^6.0.2",
     "@commitlint/config-conventional": "^6.0.2",
