@@ -39,11 +39,15 @@ export default class Interval extends React.Component<Props> {
     this._stop()
   }
 
-  render(): ?React.Node {
+  render(): React.Node | null {
     const {render, children} = this.props
-    if (children) return children()
-    if (render) return render()
+    if (children) return normalizeNull(children())
+    if (render) return normalizeNull(render())
     return null
   }
 }
 
+function normalizeNull<T>(value: ?T): T | null {
+  if (value == null) return null
+  return value
+}
