@@ -11,6 +11,10 @@ export type Props = {
 export default class Interval extends React.Component<Props> {
   _intervalID: any = null
 
+  state = {
+   delay:null,
+  };
+  
   _stop() {
     if (this._intervalID != null) {
       clearInterval(this._intervalID)
@@ -27,18 +31,25 @@ export default class Interval extends React.Component<Props> {
   componentDidMount() {
     this._start(this.props.delay)
   }
-
-  componentWillReceiveProps(nextProps: Props) {
-    if (this.props.delay !== nextProps.delay) {
-      this._stop()
-      this._start(nextProps.delay)
+  
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.delay !== nextProps.delay) {
+      return {delay:nextProps.delay};
+    }
+    return null;
+  }
+  
+  componentDidUpdate(prevProps) {
+    if (prevProps.delay !== this.state.delay) {
+	  this._stop()
+      this._start(this.state.delay)
     }
   }
 
   componentWillUnmount() {
     this._stop()
   }
-
+  
   render(): React.Node | null {
     const {render, children} = this.props
     if (children) return normalizeNull(children())
