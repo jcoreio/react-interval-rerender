@@ -2,10 +2,7 @@
   "extends": [
     "@jedwards1211/eslint-config-react",
     "@jedwards1211/eslint-config-flow",
-    "prettier",
-    "prettier/babel",
-    "prettier/flowtype",
-    "prettier/react"
+    "prettier"
   ],
   "parser": "@babel/eslint-parser",
   "env": {
