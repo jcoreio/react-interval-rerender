@@ -1,6 +1,18 @@
 {
   "extends": [
-    "@jedwards1211/eslint-config-react", "@jedwards1211/eslint-config-flow"
+    "@jedwards1211/eslint-config-react",
+    "@jedwards1211/eslint-config-flow",
+    "prettier"
   ],
-  "parser": "babel-eslint"
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "es2017": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect",
+      "flowVersion": "detect"
+    }
+  }
 }
