@@ -28,10 +28,10 @@ export default class Interval extends React.Component<Props> {
     this._start(this.props.delay)
   }
 
-  componentWillReceiveProps(nextProps: Props) {
-    if (this.props.delay !== nextProps.delay) {
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.delay !== this.props.delay) {
       this._stop()
-      this._start(nextProps.delay)
+      this._start(this.props.delay)
     }
   }
 
